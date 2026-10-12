@@ -9,6 +9,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import org.exodusstudio.stellaris.Stellaris;
 import org.exodusstudio.stellaris.neoforge.datagen.loottable.StellarisBlockLootTable;
+import org.exodusstudio.stellaris.neoforge.datagen.tags.StellarisBiomeTagsProvider;
 import org.exodusstudio.stellaris.neoforge.datagen.tags.StellarisBlockTagsProvider;
 import org.exodusstudio.stellaris.neoforge.datagen.tags.StellarisItemTagsProvider;
 
@@ -25,6 +26,7 @@ public class StellarisDatagen {
         event.createProvider(packOutput -> new StellarisModelGenerator(packOutput, clientResourceManager));
         event.createProvider(StellarisDatapackProvide::new);
         event.createBlockAndItemTags(StellarisBlockTagsProvider::new, StellarisItemTagsProvider::new);
+        event.createProvider(StellarisBiomeTagsProvider::new);
         event.createProvider(((output, lookupProvider) -> new LootTableProvider(
                 output,
                 Set.of(),

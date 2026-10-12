@@ -16,7 +16,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import org.exodusstudio.stellaris.common.entities.mobs.BlueFishEntity;
 import org.exodusstudio.stellaris.common.entities.mobs.LunarParasiteEntity;
 import org.exodusstudio.stellaris.common.world.ModPlacedFeatures;
-import org.exodusstudio.stellaris.common.world.StellarisOreFeatures;
+import org.exodusstudio.stellaris.common.world.constructed.StellarisOreFeatures;
 
 public class BiomeModificationsRegistry {
     private static final SpawnPlacementType IN_WATER_OR_BLUE_LIQUID = (level, pos, entityType) -> {
@@ -103,7 +103,11 @@ public class BiomeModificationsRegistry {
         );
 
         BiomeModifications.addProperties(context -> context.hasTag(TagsRegistry.BiomeTags.IS_MARS), ((_, mutable) -> {
-            mutable.getGenerationProperties().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, StellarisOreFeatures.MARS_IRON_ORE.placedFeature());
+            mutable.getGenerationProperties()
+                    .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, StellarisOreFeatures.MARS_ORE_IRON_SMALL.placedFeature())
+                    .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, StellarisOreFeatures.MARS_ORE_IRON_MIDDLE)
+                    .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, StellarisOreFeatures.MARS_ORE_IRON_UPPER)
+            ;
         }));
     }
 

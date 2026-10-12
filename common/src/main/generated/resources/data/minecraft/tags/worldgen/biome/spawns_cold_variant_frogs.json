@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "stellaris:ice_caves",
+      "required": false
+    },
+    {
+      "id": "stellaris:ice_spikes",
+      "required": false
+    }
+  ]
+}

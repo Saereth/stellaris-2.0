@@ -25,6 +25,7 @@ import org.exodusstudio.stellaris.common.network.packets.SyncSpaceStationsPacket
 import org.exodusstudio.stellaris.common.network.packets.SyncWiki;
 import org.exodusstudio.stellaris.common.registries.*;
 import org.exodusstudio.stellaris.common.utils.IdentifierUtils;
+import org.exodusstudio.stellaris.common.world.ModFeatures;
 import org.exodusstudio.stellaris.common.world.attribute.EnvironmentAttributesRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -69,6 +70,8 @@ public final class Stellaris {
         MenuProviderRegistry.register();
         SoundRegistry.SOUNDS.register();
         EnvironmentAttributesRegistry.ENVIRONMENT_ATTRIBUTES.register();
+        ModFeatures.FEATURES.register();
+        BiomeRegistry.init();
 
         ArgumentsTypesRegistry.init();
         CommandsRegistry.init();

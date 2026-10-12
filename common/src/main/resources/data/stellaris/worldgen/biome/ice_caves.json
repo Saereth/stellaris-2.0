@@ -1,0 +1,44 @@
+{
+  "attributes": {
+    "minecraft:visual/fog_color": "#14559b",
+    "minecraft:visual/sky_color": "#7fa1ff",
+    "minecraft:visual/water_fog_color": "#14559b",
+    "stellaris:gameplay/flash_freeze": true
+  },
+  "temperature": 0,
+  "downfall": 0,
+  "has_precipitation": true,
+  "temperature_modifier": "frozen",
+  "effects": {
+    "water_color": "#14559b"
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": [
+    "minecraft:cave",
+    "minecraft:cave_extra_underground",
+    "minecraft:canyon"
+  ],
+  "features": [
+    [],
+    [],
+    [
+      "stellaris:large_icicle"
+    ],
+    [],
+    [],
+    [],
+    [
+      "stellaris:ice_cave_ore_iron_upper",
+      "stellaris:ice_cave_ore_iron_middle",
+      "stellaris:ice_cave_ore_iron_small"
+    ],
+    [
+    ],
+    [],
+    [],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

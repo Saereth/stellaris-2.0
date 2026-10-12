@@ -1,0 +1,39 @@
+{
+    "attributes": {
+        "minecraft:visual/sky_color": "#7fa1ff",
+        "stellaris:gameplay/flash_freeze": true
+    },
+    "temperature_modifier": "frozen",
+    "carvers": [
+        "minecraft:cave",
+        "minecraft:cave_extra_underground",
+        "minecraft:canyon"
+    ],
+    "creature_spawn_probability": 0,
+    "downfall": 0.5,
+    "effects": {
+        "water_color": "#3f76e4"
+    },
+    "features": [
+        [],
+        [],
+        [],
+        [],
+        [
+            "minecraft:ice_spike",
+            "minecraft:ice_patch"
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+            "minecraft:freeze_top_layer"
+        ]
+    ],
+    "has_precipitation": true,
+    "spawn_costs": {},
+    "spawners": {},
+    "temperature": 0
+}

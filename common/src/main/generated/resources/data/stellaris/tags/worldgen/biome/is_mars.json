@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "stellaris:red_desert",
+      "required": false
+    },
+    {
+      "id": "stellaris:ice_spikes",
+      "required": false
+    }
+  ]
+}

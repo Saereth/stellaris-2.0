@@ -2,12 +2,14 @@ package org.exodusstudio.stellaris.common.registries;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
+import org.exodusstudio.stellaris.Stellaris;
 import org.exodusstudio.stellaris.common.utils.IdentifierUtils;
 
 public class TagsRegistry {
@@ -46,6 +48,8 @@ public class TagsRegistry {
         public static final TagKey<Block> NO_OXYGEN_CROP_BASE = addTag("no_oxygen_crop_base");
         public static final TagKey<Block> OXYGEN_PERMEABLE = addTag("oxygen_permeable");
         public static final TagKey<Block> MARS_STONE_ORE_REPLACEABLE = addTag("mars_stone_ore_replaceables");
+        public static final TagKey<Block> LARGE_ICICLE_REPLACEABLE = addTag("large_icicle_replaceables");
+        public static final TagKey<Block> ICE_CAVE_ORE_REPLACEABLE = addTag("ice_cave_mars_stone_replaceables");
 
         public static TagKey<Block> addTag(String path) {
             return TagKey.create(Registries.BLOCK, IdentifierUtils.id(path));
