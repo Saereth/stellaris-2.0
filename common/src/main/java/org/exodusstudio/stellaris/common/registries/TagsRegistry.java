@@ -2,14 +2,12 @@ package org.exodusstudio.stellaris.common.registries;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
-import org.exodusstudio.stellaris.Stellaris;
 import org.exodusstudio.stellaris.common.utils.IdentifierUtils;
 
 public class TagsRegistry {

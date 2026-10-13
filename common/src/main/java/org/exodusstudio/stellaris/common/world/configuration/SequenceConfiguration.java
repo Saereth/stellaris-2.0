@@ -12,19 +12,9 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.stream.Stream;
 
-public class SequenceConfiguration implements FeatureConfiguration {
-    private final HolderSet<PlacedFeature> placedFeatures;
-
+public record SequenceConfiguration(HolderSet<PlacedFeature> features) implements FeatureConfiguration {
     public static final Codec<SequenceConfiguration> CODEC = RecordCodecBuilder.create(
             instance -> instance.group(ExtraCodecs.nonEmptyHolderSet(PlacedFeature.LIST_CODEC).fieldOf("features").forGetter(SequenceConfiguration::features)).apply(instance, SequenceConfiguration::new));
-
-    public SequenceConfiguration(HolderSet<PlacedFeature> placedFeatures) {
-        this.placedFeatures = placedFeatures;
-    }
-
-    public HolderSet<PlacedFeature> features() {
-        return placedFeatures;
-    }
 
     @Override
     @NonNull
