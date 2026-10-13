@@ -2,7 +2,6 @@ package org.exodusstudio.stellaris.common.world.features;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
@@ -30,24 +29,20 @@ public class ComplexSpikeFeature extends Feature<SpikeFeatureConfiguration> {
         }
 
         // Define our crystal variables
+        Vec3 originBottomCorner = new Vec3(origin.getX(), origin.getY(), origin.getZ());
         BlockState baseBlock = context.config().blockState();
-//        BlockState baseBlock = context.config().blockState();
-//        int numberOfSpikes = 2;
-//        int numberOfSpikes = context.config().branchCount().sample(random);
+        int numberOfSpikes = 6;
+        int tau = 360;
+        int baseAngle = random.nextInt(tau);
 
-
-        for (Direction direction : Direction.Plane.HORIZONTAL) {
+        for (int i = 0; i < numberOfSpikes; i++) {
+            double angle = Math.toRadians(baseAngle + i * ((double) tau / numberOfSpikes));
             int coreRadius = 3;
-            int length = 12;
-//            IntProvider angle = UniformInt.of(30,60);
+            int spread = random.nextIntBetweenInclusive(10, 17);
+            int height = random.nextIntBetweenInclusive(14, 20);
 
-//        int coreRadius = context.config().baseRadius().sample(random);
-//        int length = context.config().baseLength().sample(random);
-//        IntProvider angle = context.config().baseAngle();
-            Vec3 originBottomCorner = new Vec3(origin.getX(), origin.getY(), origin.getZ());
-//            int theta = angle.sample(random);
-//            int phi = angle.sample(random);
-            Vec3 tip = origin.relative(direction).getCenter().add(length, length, length);
+            Vec3 offset = new Vec3(Math.cos(angle + Math.toRadians(random.nextInt(5))) * spread, height, Math.sin(angle + Math.toRadians(random.nextInt(5))) * spread);
+            Vec3 tip = origin.getCenter().add(offset);
             Vec3 ray = tip.subtract(originBottomCorner);
             int minX = Math.min(origin.getX() - coreRadius, (int) tip.x);
             int minY = Math.min(origin.getY() - coreRadius, (int) tip.y);
@@ -78,10 +73,6 @@ public class ComplexSpikeFeature extends Feature<SpikeFeatureConfiguration> {
             }
 
         }
-
-
-
-
         return true;
     }
 
